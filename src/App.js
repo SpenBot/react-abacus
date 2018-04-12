@@ -1,0 +1,93 @@
+
+//// DEPENDENCIES, MODULES ///////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+import React, { Component } from "react";
+
+
+//// IMPORT COMPONENTS, STYLES ////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+import Controller from "./Controller/Controller";
+import CounterList from "./CounterList/CounterList";
+
+import "./App.css";
+
+
+
+
+//// COMPONENT CLASS /////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+class App extends Component {
+
+//// CONSTRUCTOR /////////////////////////////////////////////////////////
+  constructor(){
+    super()
+    this.state = {
+      counters: 0
+    }
+  }
+
+//// HANDLE ADD COUNTERS /////////////////////////////////////////////////
+  handleAddCounters () {
+    let countersCopy = this.state.counters
+    countersCopy += 1
+    this.setState({
+      counters: countersCopy
+    })
+  }
+
+//// HANDLE SUB COUNTERS /////////////////////////////////////////////////
+  handleSubCounters () {
+    if (this.state.counters <= 0) {
+      return
+    } else {
+      let countersCopy = this.state.counters
+      countersCopy -= 1
+      this.setState({
+        counters: countersCopy
+      })
+    }
+  }
+
+
+//// RENDER //////////////////////////////////////////////////////////////
+  render() {
+
+//// RETURN //////////////////////////////////////////////////////////////
+    return (
+      <div className="App">
+
+        <header>
+          <h1 className="Controller-title">React Abacus</h1>
+        </header>
+
+        <Controller
+          counters={this.state.counters}
+          addCounter={this.handleAddCounters.bind(this)}
+          subCounter={this.handleSubCounters.bind(this)}
+        />
+
+        <CounterList counters={this.state.counters}/>
+
+      </div>
+    );
+  }
+}
+
+
+
+
+
+//// EXPORT COMPONENT ////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+export default App;
+
+
+
+
+
+
+// END ///////////////////////////////////////////////////////////////////

@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: rgb(70, 125, 108);
+  background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+
+  font-family: 'Slabo 27px', serif;
+}

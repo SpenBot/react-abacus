@@ -1,0 +1,13 @@
+.CounterItem {
+  margin: 20px auto;
+  border: 10px solid white;
+  width: 750px;
+}
+
+.Counter-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}

@@ -1,0 +1,38 @@
+.Controller {
+  margin: 15px auto;
+  text-align: center;
+}
+
+.ControllerButton {
+  height: 60px;
+  width: 280px;
+  border: 3px solid yellow;
+  margin: 5px 20px;
+
+  color: yellow;
+  font-size: 22px;
+  letter-spacing: 3px;
+
+  /* background-color: rgb(19, 79, 65); */
+  background-color: rgb(19, 79, 80);
+
+  box-shadow: 3px 3px 3px rgb(30, 30, 30);
+}
+
+.Controller h4 {
+  margin: 15px auto;
+  color: yellow;
+  font-size: 32px;
+  text-shadow: 2px 2px 2px rgb(40, 40, 40);
+  letter-spacing: 4px;
+  outline: none;
+}
+
+.ControllerButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.ControllerButton:focus {
+  outline: 0;
+}
