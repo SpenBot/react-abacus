@@ -1,13 +1,75 @@
 .CounterItem {
   margin: 20px auto;
   border: 10px solid white;
+  background-color: rgb(19, 79, 80);
+
   width: 750px;
+  height: 140px;
+  padding: 10px;
+
 }
 
-.Counter-row {
+
+/* //// BEANS ////////////////////////////////////////////////////////////// */
+
+.BeanHolderAll {
+  height: 100px;
+  width: 750px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin: 0 auto;
+}
+
+.BeanHolderLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 375px;
+  height: 100px;
+}
+
+.BeanHolderRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 375px;
+  height: 100px;
+}
+
+.CounterBean {
+  height: 80px;
+  width: 30px;
+  margin: 0 3px;
+  background-color: white;
+}
+
+
+/* //// BUTTONS //////////////////////////////////////////////////////////// */
+
+.CounterButtonsHolder {
+  height: 20px;
+  padding: 5px;
+  text-align: center;
+}
+
+.CounterButtons {
+    margin: 0 10px;
+    font-size: 24px;
+    width: 300px;
+    border: 3px solid yellow;
+    color: yellow;
+    background-color: rgb(70, 125, 108);
+}
+
+
+.CounterButtons:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.CounterButtons:focus {
+  outline: 0;
 }

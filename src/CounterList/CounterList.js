@@ -26,13 +26,7 @@ class CounterList extends Component {
   render() {
 
     let counters = []
-    // let i = 0
-    //
-    // if (this.props.counters > 0) {
-    //   for (i ; i < this.props.counters; i++) {
-    //     counters.push(<Counter key={i}/>)
-    //   }
-    // }
+
 
     for (let i = 0; i < this.props.counters; i++) {
       counters.push(<Counter key={i}/>);

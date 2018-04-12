@@ -17,41 +17,72 @@ class Counter extends Component {
   constructor() {
     super()
     this.state = {
-      count: 0
+      beansLeft: 10,
+      beansRight: 0
     }
   }
 
 //// ADD COUNT TO THIS STATE /////////////////////////////////////////////
-  addCount () {
-    let countCopy = this.state.count
-    countCopy += 1
-    this.setState({
-      count: countCopy
-    })
+  addLeft () {
+
+    if (this.state.beansLeft < 10) {
+      this.setState(prevState => ({
+        beansLeft: prevState.beansLeft + 1,
+        beansRight: prevState.beansRight - 1
+      }))
+    }
+
   }
 
 //// SUB COUNT TO THIS STATE /////////////////////////////////////////////
-  subCount () {
-    let countCopy = this.state.count
-    countCopy -= 1
-    this.setState({
-      count: countCopy
-    })
+  addRight () {
+
+    if (this.state.beansRight < 10) {
+      this.setState(prevState => ({
+        beansLeft: prevState.beansLeft - 1,
+        beansRight: prevState.beansRight + 1
+      }))
+    }
+
   }
 
 
 //// RENDER //////////////////////////////////////////////////////////////
   render() {
 
+    let leftBeans = []
+    let rightBeans = []
+
+    for (let i = 0; i < this.state.beansLeft; i++) {
+      leftBeans.push(<div className="CounterBean" key={i}></div>)
+    }
+
+    for (let i = 0; i < this.state.beansRight; i++) {
+      rightBeans.push(<div className="CounterBean" key={i}></div>)
+    }
+
+
 //// RETURN //////////////////////////////////////////////////////////////
     return (
       <div className="CounterItem">
 
-        <h5 className="Counter-title">Counter</h5>
-        <h6 className="Counter-DisplayCount">Current Count: {this.state.count}</h6>
+        <div className="BeanHolderAll">
 
-        <button onClick={this.addCount.bind(this)}>+</button>
-        <button onClick={this.subCount.bind(this)}>-</button>
+          <div className="BeanHolderLeft">
+            {leftBeans}
+          </div>
+
+          <div className="BeanHolderRight">
+            {rightBeans}
+          </div>
+
+        </div>
+
+
+        <div className="CounterButtonsHolder">
+          <button className="CounterButtons" onClick={this.addLeft.bind(this)}> &#8592; </button>
+          <button className="CounterButtons" onClick={this.addRight.bind(this)}> &#8594; </button>
+        </div>
 
       </div>
     );
